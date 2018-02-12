@@ -157,7 +157,10 @@ status_handlers = {
     14: TMDBRequestError('Authentication Failed.'),
     15: TMDBError('Failed'),
     16: TMDBError('Device Denied'),
-    17: TMDBError('Session Denied')}
+    17: TMDBError('Session Denied'),
+    24: TMDBRequestError('Backend timed out'),
+    25: TMDBRequestError('Rate limit exceeded'),
+}
 
 def handle_status(data, query):
     status = status_handlers[data.get('status_code', 1)]
